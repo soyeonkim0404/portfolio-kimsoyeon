@@ -8,7 +8,7 @@ const Home: React.FC = () => {
 
 const Main = styled.div`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 35px - 60px);
   ${MIXINS.flexBox()}
   font-size: 3rem;
 `;
