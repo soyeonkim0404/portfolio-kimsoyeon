@@ -2,12 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Footer = () => {
-  return (
-    <Foot>
-      Copyright Kim So Yeon. All rights
-      reserved.
-    </Foot>
-  );
+  return <Foot>Copyright Kim So Yeon. All rights reserved.</Foot>;
 };
 
 const Foot = styled.div`

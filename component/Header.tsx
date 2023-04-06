@@ -4,32 +4,24 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <HeadStyled>
-      <li>
-        <Link href={`/`}>HOME</Link>
-      </li>
-      <li>
-        <Link href={`/study`}>
-          STUDY
-        </Link>
-      </li>
-    </HeadStyled>
+    <Nav>
+      <Link href={`/`}>HOME</Link>
+      <Link href={`/study`}>STUDY</Link>
+    </Nav>
   );
 };
 
-const HeadStyled = styled.ul`
+const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 60px;
   box-sizing: border-box;
-  li {
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-    & + li {
+  a {
+    color: #fff;
+    text-decoration: none;
+    & + a {
       position: relative;
       margin-left: 20px;
       padding-left: 20px;
@@ -41,12 +33,7 @@ const HeadStyled = styled.ul`
         left: 0;
         width: 1px;
         height: 12px;
-        background: rgba(
-          255,
-          255,
-          255,
-          0.5
-        );
+        background: rgba(255, 255, 255, 0.5);
       }
     }
   }

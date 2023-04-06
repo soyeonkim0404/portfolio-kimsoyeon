@@ -1,31 +1,27 @@
 import React from "react";
 import Contents from "@/component/Contents";
-import styled from "styled-components";
 import Link from "next/link";
+import List from "@/component/List";
+import { studyLink } from "@/data/pageLink";
+import SubHeader from "@/component/SubHeader";
 
 const Index = () => {
   return (
-    <Contents>
-      <List>
-        <li>
-          <Link
-            href={`/study/fireworks`}
-          >
-            fireworks
-          </Link>
-        </li>
+    <Contents type="list">
+      <SubHeader title="STUDY" />
+      <List col="3">
+        {studyLink.map(item => (
+          <li key={item.id}>
+            <Link href={item.path}>
+              {item.id}.
+              <br />
+              {item.title}
+            </Link>
+          </li>
+        ))}
       </List>
     </Contents>
   );
 };
-
-const List = styled.ul`
-  li {
-    a {
-      color: red;
-      text-decoration: none;
-    }
-  }
-`;
 
 export default Index;

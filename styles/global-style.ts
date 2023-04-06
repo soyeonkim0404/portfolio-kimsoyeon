@@ -11,18 +11,14 @@ export const GlobalStyle = createGlobalStyle`
     ::-webkit-scrollbar {
         display: none;
     }
-    html{
+    html, body{
         font-size: 16px;
-        -webkit-text-size-adjust: none;
-        font-family: -apple-system,BlinkMacSystemFont,helvetica,Apple SD Gothic Neo,sans-serif;       
-        font-display: fallback;
-        background: black;
+        font-family: 'Montserrat', sans-serif !important;
+        background: conic-gradient(at 90% 105%, transparent 50%, rgb(162, 128, 255) 75%, rgb(225, 128, 255) 80%, transparent) repeat scroll 0% 0%, rgba(0, 0, 0, 0) conic-gradient(at 50% -5%, rgb(101, 234, 209) 25%, rgb(252, 255, 193), rgb(244, 105, 169) 75%) repeat scroll 0% 0%;
         color:white;
         ${media.tablet}{
-            font-size: 16px;
+          font-size: 16px;
         }
-        -ms-overflow-style: none;
-        scrollbar-width: none;
     }
     button {
         background: none;

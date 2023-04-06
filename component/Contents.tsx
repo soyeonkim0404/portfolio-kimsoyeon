@@ -2,30 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { MIXINS } from "@/styles/theme";
 
-const Contents = (props: {
-  children:
-    | string
-    | number
-    | boolean
-    | React.ReactElement<
-        any,
-        | string
-        | React.JSXElementConstructor<any>
-      >
-    | React.ReactFragment
-    | React.ReactPortal
-    | null
-    | undefined;
-}) => {
-  return (
-    <Content>{props.children}</Content>
-  );
+type Props = {
+  children: any;
+  type: string;
+};
+
+const Contents: React.FC<Props> = ({ children, type }) => {
+  return <Content className={`${type}`}>{children}</Content>;
 };
 
 const Content = styled.div`
   width: 100%;
-  height: calc(100vh - 35px - 60px);
+  height: calc(100vh - 35px);
+  padding: 20px 20px;
   ${MIXINS.flexBox()}
+  box-sizing:border-box;
+  &.list {
+    ${MIXINS.flexBox("column", "center", "flex-start")}
+  }
 `;
 
 export default Contents;
